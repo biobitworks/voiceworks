@@ -1,0 +1,582 @@
+{
+  "$schema": "https://cellico.bio/schemas/fco-record-v0.1.json",
+  "fco_version": "0.1-draft",
+  "object_type": "conversation_seal",
+  "object_id": "sha256:f7065468eb5976de25c5b7b987295c3e3bf6192758968de7a65dffc1111c0333",
+  "payload": {
+    "conversation_id": "ses_0925e44ecffeEAPq9bq5IJX3sZ",
+    "title": "ElevenLabs x Sauna Startup Hack Night — voiceworks build session",
+    "turn_count": 33,
+    "leaf_count": 33,
+    "leaves": [
+      {
+        "index": 0,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:17:00Z",
+        "content_sha256": "164646356decafb67e22bb5f307221b544204a6a4160f3a0130d76c53bb47303",
+        "leaf_sha256": "c7337052324edc5120e7482e6603f849a47c9d534f730c2ab5b4d579e1a9f105",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 47
+      },
+      {
+        "index": 1,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T01:17:30Z",
+        "content_sha256": "977143f8efc9893bfe05f4d22c947658df23f4e2f7b4d8356eeec7654f177854",
+        "leaf_sha256": "137616f5871d95d73b4d9a5c22bc550ff681476da75432b6d11e7d6260da9647",
+        "tool_calls": [
+          "question"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 179
+      },
+      {
+        "index": 2,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:18:00Z",
+        "content_sha256": "06a7a5c99e2e21cecfe14ccdb8ee71c2d58e4e568aefb9e12f28ddaccd878a09",
+        "leaf_sha256": "2dace673e3eb6cbb804bac4bec9512e253cab225cea24262bfa0f3db76184244",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 90
+      },
+      {
+        "index": 3,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T01:18:48Z",
+        "content_sha256": "9bd3031438294580df7e8d2323d3da124a3bfdc8efd13c69241795c586ab0ca4",
+        "leaf_sha256": "f889a7970c8c64e22b28c7b2b41f381746a84f4685e4178da8a4a0e115a1155b",
+        "tool_calls": [
+          "webfetch"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 146
+      },
+      {
+        "index": 4,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:19:00Z",
+        "content_sha256": "d167e89579709a2e96aad00648f4b4d4606a4ee9bcdaf30abe6049cdc6fff28a",
+        "leaf_sha256": "139ad45104cdd198e7456955bc4b52d33accd55180f430689c1ab30ffebbaf5b",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 27
+      },
+      {
+        "index": 5,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T01:19:54Z",
+        "content_sha256": "a1892fcebe5982902d70fd2e2e40430128fb1fa910a71ff12196e7bb4b296fe8",
+        "leaf_sha256": "49e0beed6b7608ec043a54272e47edf577e941670e6993a6c61c47194b058f60",
+        "tool_calls": [
+          "read"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 239
+      },
+      {
+        "index": 6,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:25:00Z",
+        "content_sha256": "9a94052110d150a25f77d9542bfc49b7d394a6d608cd85b0f55010dd08657b40",
+        "leaf_sha256": "f7bbcfba55add2bcbed2a643c984e613ec1e5cd55419836969965432fc66722a",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 150
+      },
+      {
+        "index": 7,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T01:30:00Z",
+        "content_sha256": "3ff2702a23115837e96df106cdecb569b6343b0b16b9f0d6b727f7272e29b7ea",
+        "leaf_sha256": "b3452b6eb4717cb48553fc55109d895c57668147bd28d1eba67e621682e76a10",
+        "tool_calls": [
+          "webfetch",
+          "websearch"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 269
+      },
+      {
+        "index": 8,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:32:00Z",
+        "content_sha256": "4f6bfe92881b1276c105620c582e608bf8264bf1138178b878d36c0f825b01e4",
+        "leaf_sha256": "5fc885efb841ed0dd8ff78648ee760b402fa71d0819f065563d96aa0b09b8348",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 104
+      },
+      {
+        "index": 9,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T01:35:00Z",
+        "content_sha256": "1c700bbc1fcad883486d553d344dda7c04ea08c8c02bd6ebd4dd2c324a7370e7",
+        "leaf_sha256": "7e466bab005b9131dca66baf40d3c6a3176bdb28fbf680a0cf5882bffd26e3ed",
+        "tool_calls": [
+          "bash",
+          "write",
+          "read",
+          "todowrite"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 289
+      },
+      {
+        "index": 10,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:36:00Z",
+        "content_sha256": "e3613d9833b20e34e41722d2817ba6fea7fa41e698954eb019a7e8cdfe54d658",
+        "leaf_sha256": "9639ac5e54dc72d1b1a8d84702c63d0d32d3659510f7c7c12539c7ebcb3a6ae0",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 26
+      },
+      {
+        "index": 11,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:36:30Z",
+        "content_sha256": "e33895c7f9fb64a4d404364f17b4656037f10246bb81d6885d092e8d75e1aff2",
+        "leaf_sha256": "550e981110a0e286c03cd3428d372f7ec345399ff1e44d68d75e05ec5652ec06",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 88
+      },
+      {
+        "index": 12,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T01:40:00Z",
+        "content_sha256": "ae00f0abe76440f6ee406847ce6857b05d643e734e243d4d6c5ce44a0899a620",
+        "leaf_sha256": "cab60c56a7ad03fc41de4ee54527d80f36261a937b93af52d924a8e12deb855a",
+        "tool_calls": [
+          "write",
+          "edit",
+          "app_deploy"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 228
+      },
+      {
+        "index": 13,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T01:55:00Z",
+        "content_sha256": "2e561992d78458f983ae57ac228ce90b35e6dc30f322a83043434aec913162c4",
+        "leaf_sha256": "79fa3e4041c0a533f92a86e65a5b33f0fc1b96e26ab7034bdc4ef1e56134a256",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 107
+      },
+      {
+        "index": 14,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T01:55:30Z",
+        "content_sha256": "b9090db9cf5fae204dfc324fe4498a359061f7bf4dbbdbdb0976bf3fa5cdea79",
+        "leaf_sha256": "bc4559da53010209c45d39ae8b75d094f88ca03f4a7efcbe0690c0c473f2ad78",
+        "tool_calls": [
+          "browser_verify",
+          "app_logs",
+          "bash"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 249
+      },
+      {
+        "index": 15,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:00:00Z",
+        "content_sha256": "01df72d9ab75ea1afad2db2f5eda33ab9ce697406f979677baaff634482ac105",
+        "leaf_sha256": "451fb486df838ec43fc16654d04aa6904b6283cc6226ee249bb48c75e6178f01",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 34
+      },
+      {
+        "index": 16,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:00:30Z",
+        "content_sha256": "4ef9d8db6a718c4cf3ed7f9d2c06fed5d7529948753e19a3147d1f5ba9e74a25",
+        "leaf_sha256": "253287854e30f2d5e4f4c46e33b798cf22cb871c2617e83c11ad93e901a4286d",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 249
+      },
+      {
+        "index": 17,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:01:00Z",
+        "content_sha256": "b6ed865defb8aa3d3f57a1bc6d23e37cceccb2889b75e1e6b9f0abe7ca2a67a4",
+        "leaf_sha256": "ee4f86a35ab0e211fa1f5371814e9eced210451e109ce6811c5918e696a7bebd",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 11
+      },
+      {
+        "index": 18,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:01:30Z",
+        "content_sha256": "bf8dc429becca58a9387381054dc6a29acbae09646d589a011cb09407e3740b0",
+        "leaf_sha256": "dd57f45c9c940361b5bef9f8f8b38261392fe23296a04c184f423e99431f08d3",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 45
+      },
+      {
+        "index": 19,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:05:00Z",
+        "content_sha256": "e133acac54baf5d30b4ed3f51906bda27f495906542677ba28ea9844e0e2a6c3",
+        "leaf_sha256": "3534422c5e1dd12e4ad602e329dc7dd72cd6387eb19b81b159acef2619b312e0",
+        "tool_calls": [
+          "bash",
+          "write"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 213
+      },
+      {
+        "index": 20,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:25:00Z",
+        "content_sha256": "fcfbe3c290ef2d31f51624824b0a6ed8559cb3ba69ba63d8f2a36daaef526dcb",
+        "leaf_sha256": "6b8e1723318b70f3f19efc76b69b3d7b440638e06af191f27ed29bb3b1c2c8a4",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 84
+      },
+      {
+        "index": 21,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:30:00Z",
+        "content_sha256": "d32742e48901b1408147abd05ebbd3f77531883d374ec680dc10e6dbdf3c84ac",
+        "leaf_sha256": "634dab37706ee2b8ee01236edac6ee7394fd634101412722f0b8633377ab16eb",
+        "tool_calls": [
+          "bash",
+          "ffmpeg"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 153
+      },
+      {
+        "index": 22,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:35:00Z",
+        "content_sha256": "d91a71764ece50fc59dffb155dd081f7b5dd3ef5efd3edff6c4134b79c463ae7",
+        "leaf_sha256": "8bfa607f93c7424d7ef7854bf406a13fbcde2f16a84c114624ad0e60cb2ba27e",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 81
+      },
+      {
+        "index": 23,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:40:00Z",
+        "content_sha256": "8aa960c3b24f524fbb173cd382f2c13f31017a7e0b45089d397a5460c0611269",
+        "leaf_sha256": "f91e204d9cb79032d55f98d282565a50b0b18147f620eb1c0609e491e1e49af5",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 42
+      },
+      {
+        "index": 24,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:45:00Z",
+        "content_sha256": "758378eef6d23e4d28ee6591c05583ea4d8a267c6061a37a15f588806c3815af",
+        "leaf_sha256": "82c147cb50f638e1ea772fafbbc30d424896273778200bb9cf72dc7ccf7a0946",
+        "tool_calls": [
+          "mv",
+          "edit",
+          "app_deploy",
+          "app_delete"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 188
+      },
+      {
+        "index": 25,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:50:00Z",
+        "content_sha256": "ed5b93dd461d88403df97b2fe0f6133e74076f62824b5f5d140db3b12bf19b14",
+        "leaf_sha256": "5755b5481ae26eef5079d45ebb81e8ac7cb0c0cb0ef3cbe6e21b6c0dd10f3bb8",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 200
+      },
+      {
+        "index": 26,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:50:30Z",
+        "content_sha256": "8e277b041efdd3250aa7a986341a199dac4cc452d6fa95e5d4290428b3259aee",
+        "leaf_sha256": "7dd076f83cf0f36eb1edb5e2e1e39f0c4da909da42c0a7a7f48ad05a09077dc5",
+        "tool_calls": [
+          "read"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 215
+      },
+      {
+        "index": 27,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:53:00Z",
+        "content_sha256": "020e109aea65251a6745b6df8ea08813ec627456b0c5ee1ff6cdee8fe650d6f1",
+        "leaf_sha256": "dc5d3159fc08a06f1d3ad0b1f0e28fd127e3579800b5eff94a918adc34ae3ac3",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 99
+      },
+      {
+        "index": 28,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:53:30Z",
+        "content_sha256": "9524d5d7da034c3c2cd7e95159cab4df8d5b1b70fadbcb6e84e3013c0fb290ec",
+        "leaf_sha256": "01ec96e9302be37f790b08528083d6fec6c69a7017e0b05b72a17c1458e6345e",
+        "tool_calls": [
+          "write"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 82
+      },
+      {
+        "index": 29,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:55:00Z",
+        "content_sha256": "aa8807b0f2dd351d5ea601075d0bd99a69571464ba1420549f04548dc7f1e478",
+        "leaf_sha256": "4f70ff020f9c0151fa2a98eaf8b1184e20bf68d0d67161d05125b49b5b2e7c40",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 82
+      },
+      {
+        "index": 30,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:55:30Z",
+        "content_sha256": "0ba1fa5fbb96069e142ed680b8d25397bcf6d15cc350e66693623cfc26f24277",
+        "leaf_sha256": "087f2d1f694e01d9875a949a5babf41654f5ead0fd7f3c71d86db148bdfce3a7",
+        "tool_calls": [
+          "write"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 226
+      },
+      {
+        "index": 31,
+        "role": "user",
+        "provenance": "human",
+        "timestamp_utc": "2026-07-17T02:58:00Z",
+        "content_sha256": "23d501396af374db86ea735e4793b1962f522d5ef388029736cb4634307718df",
+        "leaf_sha256": "43209102431504158cd5a2230c54412b2572892d9b2c0d6df09227212f96bc41",
+        "tool_calls": [],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 22
+      },
+      {
+        "index": 32,
+        "role": "assistant",
+        "provenance": "machine",
+        "timestamp_utc": "2026-07-17T02:58:30Z",
+        "content_sha256": "5b173b5816d8b2766baab9d64dfc58786f33996d05388e0144ffbc4698e8871d",
+        "leaf_sha256": "3b235342fecb871f5f46a9a29aa3a87d1b80c6b070fd92f44a56ce4b1cb9c45d",
+        "tool_calls": [
+          "write",
+          "bash"
+        ],
+        "voice_tokenizer": {
+          "provider": "ElevenLabs",
+          "voice_id": "sauna-main",
+          "model_id": "eleven_flash_v2_5"
+        },
+        "content_length_chars": 201
+      }
+    ],
+    "merkle_root": "39ff5fcacb2be4759c3bb8629e11e07c7de9ef52a4f142a7b5f52866f2ba9250",
+    "merkle_algorithm": "RFC 6962 (leaf 0x00, node 0x01, duplicate-last)",
+    "content_hash_algorithm": "SHA-256",
+    "provenance_counts": {
+      "human": 18,
+      "machine": 15
+    },
+    "voice_token_counts": {
+      "sauna-main": 33
+    },
+    "design_note": "Each leaf binds (index, provenance, content_sha256, voice_id) so any voice token can be traced back to whether it originated from a human or a machine turn, and which ElevenLabs voice would speak it."
+  },
+  "authorization": {
+    "author": "Byron P. Lee",
+    "release_class": "public-safe",
+    "excluded": [
+      "credentials",
+      "private biological data",
+      "trade secrets",
+      "operator-internal planning"
+    ],
+    "deploying_agent": "Sauna"
+  },
+  "claim": {
+    "type": "conversation_seal",
+    "statement": "This record binds every turn of the conversation into a Merkle chain. Each leaf carries provenance (human or machine) and the voice tokenizer that would render it as speech. The Merkle root recomputes from the listed leaves; tamper with any turn — content, role, provenance, or tokenizer — and the root changes.",
+    "claim_ceiling": "This record proves provenance, ordering, and voice-tokenizer binding of the recorded turns. It does not prove the participants are who they claim to be, that any claim in the conversation is true, or that the recorded content is complete."
+  },
+  "provenance": {
+    "human_contribution": "Byron P. Lee: direction, design feedback, manuscript authorship, every human turn.",
+    "ai_contribution": "Sauna: produced every machine turn, including tool calls, code generation, deployment, and this seal."
+  }
+}
