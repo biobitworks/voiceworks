@@ -1,0 +1,90 @@
+# llms.txt — voicing-fco (Sauna App)
+
+A Sauna App demonstrating four-tier voice custody for AI agents. Built on the
+Fractal Custody Object / Fractal Custody Graph (FCO/FCG) design from the
+preprint https://doi.org/10.5281/zenodo.21210575.
+
+## Agent-actionable endpoints
+
+### `GET /api/`
+Returns app info and the full endpoint list.
+
+### `POST /api/seed`
+Idempotent. Mints the genesis FCO from Byron's preprint submission record.
+Body: empty. Response: `{ ok, message, object_id }`.
+
+### `GET /api/voices`
+Lists the registered voice agents (each with its ElevenLabs voice_id, model_id,
+and role). Used by the client to populate the voice picker.
+
+### `POST /api/speak`
+Speak arbitrary text via a registered voice. Each call mints a
+`tts_input_text` FCO + `tts_output_audio` FCO chained to the voice spec.
+
+Body: `{ text: string, voice?: "sauna-main" | "david", parent_id?: string }`
+Response: `{ ok, voice, input_fco, output_fco, voice_id, model_id, char_count, audio_data_uri }`
+
+### `POST /api/converse`
+Run a multi-turn script. Each turn picks a voice by role
+(`questioner` → sauna-main, `answerer` → david) and mints input + audio FCOs
+chained to the previous turn.
+
+Body: `{ script: [{ role: "questioner" | "answerer", text: string }, ...] }`
+Response: `{ ok, turns: [...], count }` — `turns[i]` carries `audio_data_uri`,
+`input_fco`, `output_fco`, and `voice`.
+
+### `POST /api/admit`
+**The manuscript's novel contribution (§3).** An agent-asserted digest is
+admitted to the graph only when independently re-derivable from the named
+bytes. Both ADMITTED and REJECTED outcomes mint a custody FCO recording the
+decision.
+
+Body: `{ claimed_digest: string, named_bytes: string }`
+Response: `{ ok, verdict: "ADMITTED" | "REJECTED", admitted, claimed_digest, recomputed_digest, node, algorithm, note }`
+
+Algorithm: `sha256(0x00 || utf8(named_bytes))` — RFC 6962 domain-separated leaf.
+
+### `GET /api/graph`
+Lists every FCO in chronological order. Returns `nodes[]` with `object_id`,
+`content_leaf`, `op_leaf`, `parents`, `payload_preview`, `claim_ceiling`,
+`created_at_utc`.
+
+### `GET /api/verify`
+Recomputes the full graph Merkle root AND each agent's vault root.
+Returns `{ leaf_count, leaves, computed_root, by_voice, algorithm }`.
+`by_voice` keys are voice keys (`sauna-main`, `david`); each value carries
+`spec_object_id`, `leaf_count`, `merkle_root`, and the first 5 leaves.
+Algorithm: RFC 6962, leaf prefix `0x00`, node prefix `0x01`, duplicate-last.
+
+### `GET /api/fco/:object_id`
+Returns one FCO with full envelope: `{ object_id, object_type, content_leaf,
+op_leaf, parents, claim_ceiling, created_at_utc, envelope }`.
+
+### `GET /api/audio/:object_id`
+Returns the synthesized MP3 bytes (`audio/mpeg`) for the output FCO.
+Requires the `object_id` of a `tts_output_audio` FCO.
+
+## Hashing model
+
+- Leaf: `sha256(0x00 || utf8(payload_bytes))`
+- Node: `sha256(0x01 || hex(left) || hex(right))`
+- Duplicate-last pairing for odd leaf counts
+- Canonical JSON envelope for FCO content hashing (recursive key sort)
+
+## Privacy model
+
+- `voice_model_spec` FCOs carry `private_payload_route: "pointer-only"`:
+  only the content hash is public; the spec bytes (voice settings, model id)
+  are gated to the user who holds the private Merkle root.
+- The per-voice Merkle root (`by_voice.<key>.merkle_root`) IS the private
+  Merkle root key for that voice — only its holder can verify what came
+  out of that voice.
+
+## What the FCO does NOT prove
+
+- Hashes prove byte-level identity, not biological / semantic correctness.
+- An admission decision proves the assertion recomputed; it does not prove
+  the named bytes are true or the producing agent is authentic.
+- Authenticity needs signatures; custody gives the binding check.
+
+See https://doi.org/10.5281/zenodo.21210575 §5–§6 for the full claim ceiling.
