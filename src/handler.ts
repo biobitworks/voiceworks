@@ -38,7 +38,7 @@ const SEED_FCO_JSON = {
   },
   "claim": {
     "type": "submission_record",
-    "statement": "The author reports submission of the reconstructed research-credit application to Lambda at 09:58 PDT on 2026-07-15.",
+    "statement": "Author-attested record of the research protocol dated 2026-07-15. The companion demo at https://glasswork.butterbase.dev demonstrates the same custody pattern applied to multi-model answer scoring.",
     "claim_ceiling": "This record documents an author-attested submission and proposed research protocol; it does not establish award approval, completed GPU experiments, frontier-scale training, or validated novelty.",
   },
   "provenance": {
@@ -408,6 +408,64 @@ app.get("/api/audio/:object_id", async (c) => {
   if (rows.length === 0) return c.json({ error: "not found" }, 404);
   const bytes = Uint8Array.from(atob(rows[0].mp3_bytes_b64), (ch: string) => ch.charCodeAt(0));
   return new Response(bytes, { headers: { "Content-Type": "audio/mpeg" } });
+});
+
+// Live seal: every page refresh appends a page_view_event FCO and recomputes the root.
+// Drives the live-updating panel on the UI.
+app.post("/api/view", async (c) => {
+  const env = c.env as any;
+  const body = await c.req.json<{ nonce?: string; route?: string }>().catch(() => ({} as any));
+  const nonce = body.nonce ?? crypto.randomUUID();
+  const route = body.route ?? "/";
+  const payload = JSON.stringify({
+    nonce,
+    route,
+    viewed_at: new Date().toISOString(),
+    agent: "sauna",
+    description: "Live-seal page-view event. Each call appends one leaf to the graph and recomputes the Merkle root.",
+  });
+  const parentId = latestNodeId(env);
+  const fco = await writeFco(env, {
+    object_type: "page_view_event",
+    payload_bytes: payload,
+    payload_media_type: "application/json",
+    parents: parentId ? [parentId] : [],
+    claim_ceiling: "Live-seal event: records that a viewer loaded the page. Provenance only.",
+  });
+  const rows = sqlAll(env, `SELECT content_leaf FROM fcos ORDER BY id ASC`, ["content_leaf"]);
+  const root = await merkleRoot(rows.map((r: any) => r.content_leaf));
+  return c.json({
+    ok: true,
+    leaf_added: fco.object_id,
+    leaf_count: rows.length,
+    merkle_root: root,
+    nonce,
+  });
+});
+
+// Live snapshot: latest leaves + global root + per-voice sub-roots.
+app.get("/api/live", async (c) => {
+  const env = c.env as any;
+  const rows = sqlAll(env,
+    `SELECT object_id, object_type, content_leaf, op_leaf, parents_json, payload_preview, claim_ceiling, created_at_utc FROM fcos ORDER BY id ASC`,
+    ["object_id", "object_type", "content_leaf", "op_leaf", "parents_json", "payload_preview", "claim_ceiling", "created_at_utc"]
+  );
+  const leaves = rows.map((r: any) => r.content_leaf);
+  const root = leaves.length ? await merkleRoot(leaves) : null;
+  const tail = rows.slice(-12).map((r: any) => ({
+    object_id: r.object_id,
+    object_type: r.object_type,
+    created_at_utc: r.created_at_utc,
+    content_leaf: r.content_leaf,
+    payload_preview: (r.payload_preview || "").slice(0, 80),
+  }));
+  return c.json({
+    ok: true,
+    leaf_count: rows.length,
+    merkle_root: root,
+    last_12_leaves: tail,
+    server_time_utc: new Date().toISOString(),
+  });
 });
 
 export default { fetch: (req: Request, env: any, ctx: AppCtx) => app.fetch(req, { ...env, ctx }) } satisfies AppHandler;
