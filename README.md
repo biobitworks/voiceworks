@@ -106,3 +106,5 @@ Apache License 2.0 — see `LICENSE`.
 - **Preprint**: *Fractal Custody Objects and Graphs for Efficient, Verifiable AI Training and Computational Biology* — Zenodo DOI `10.5281/zenodo.21210575`
 - **Deploying agent**: Sauna
 - **Voice provider**: ElevenLabs (bundled quota via Sauna proxy)
+
+**License:** Unless otherwise explicitly licensed, original Biobitworks material in this repository is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/); third-party components remain under their respective licenses.
